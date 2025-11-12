@@ -1,12 +1,15 @@
-import { useState } from 'react'
-
+import { Routes, Route } from 'react-router-dom'
+import PostsDefaultPage from './pages/PostsListPage'
+import PostsDetailtPage from './pages/PostsDetailPage'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+      <div>
+      <Routes>
+        <Route path="/" element={<PostsDefaultPage/>} />
+        <Route path="posts/:postId" element={<PostsDetailtPage />} />
+      </Routes>
+        
+      </div>
   )
 }
 

@@ -28,11 +28,22 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  flex-direction: column;
+}
+.card {
+  width: 450px;
+  height: 350px;
+  background-color: rgb(162, 79, 79);
+  text-align: center;
+}
+.card h1 {
+  color:rgb(75, 197, 246)
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center;
 }
 
 button {
