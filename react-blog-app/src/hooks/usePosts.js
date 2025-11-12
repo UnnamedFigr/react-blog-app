@@ -1,14 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from 'axios'
 
-const fetchPosts = async () => {
-    const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-    return response.data;
+function fetchPosts() {
+    return async () => {
+        const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        return res.data;
+    }
 }
 export function useGetPosts() {
-    const res = useQuery({
-        queryKey: ['posts'],
-        queryFn: fetchPosts()
-    })
-    return res;
-}
+    const queryResult = useQuery({
+        queryKey:['posts'],
+        queryFn: fetchPosts(),       
+    });
+    return queryResult;
+};
