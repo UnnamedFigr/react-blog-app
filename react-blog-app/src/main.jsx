@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
           <App />
+          <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>
         </QueryClientProvider>
       </BrowserRouter>
   </StrictMode>,
